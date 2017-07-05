@@ -8,6 +8,7 @@ const app = new express();
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }))
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
@@ -32,6 +33,6 @@ app.post('/', function(req, response) {
   });
 })
 
-app.listen(3002, function() {
+app.listen(8080, function() {
   console.log('listening')
 })
